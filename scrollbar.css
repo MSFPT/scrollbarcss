@@ -1,0 +1,57 @@
+@charset "UTF-8";
+
+:root {
+    --scrollbar-background-color: #dcdcdc;
+    --scrollbar-color: #1e1e1ed5;
+    --scrollbar-track-rounded: 0;
+    --scrollbar-thumb-rounded: 100px;
+    --scrollbar-padding: 3px;
+    --scrollbar-width: 8px;
+    /* auto | thin | none | *px */
+}
+
+/* New Syntax */
+[scrollbar="true"]:not([scrollbar="hide"]) {
+    scrollbar-color: var(--scrollbar-color) var(--scrollbar-background-color);
+    scrollbar-width: var(--scrollbar-width);
+    scrollbar-gutter: stable both-edges;
+    scroll-behavior: smooth;
+    transition: scrollbar-color 0.3s ease-out;
+}
+
+[scrollbar="true"]:not([scrollbar="hide"])::-webkit-scrollbar {
+    width: calc(var(--scrollbar-width) + (var(--scrollbar-padding) * 2));
+}
+
+/* Old Syntax */
+[scrollbar="true"]:not([scrollbar="hide"])::-webkit-scrollbar-track {
+    background-color: var(--scrollbar-background-color);
+    border-radius: var(--scrollbar-track-rounded);
+}
+
+[scrollbar="true"]:not([scrollbar="hide"])::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-color);
+    background-clip: content-box;
+
+    box-shadow: inset 2px 2px 5px 0 rgba(#808080, 0.5);
+    border: var(--scrollbar-padding) solid transparent;
+    border-radius: var(--scrollbar-thumb-rounded);
+    opacity: 0.08;
+}
+
+[scrollbar="hide"]::-webkit-scrollbar {
+    background: transparent !important;
+    width: 0px !important;
+    height: 0px !important;
+
+    -ms-overflow-style: none !important; /* IE 11 */
+    scrollbar-width: none !important; /* Firefox 64 */
+    display: none !important; /* Default */
+}
+
+@-moz-document url-prefix() {
+    /* Disable scrollbar Firefox */
+    [scrollbar="hide"] {
+        scrollbar-width: none !important;
+    }
+}
