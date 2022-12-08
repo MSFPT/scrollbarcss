@@ -216,14 +216,14 @@ div.group {
     overflow: hidden;
     margin-right: 20px;
     margin-bottom: 20px;
+    z-index: 7;
 }
 
 .btn:hover {
     color: #fff !important;
 }
 
-.btn:before,
-.btn:after {
+.btn:before{
     box-sizing: border-box;
 }
 
