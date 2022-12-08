@@ -18,7 +18,7 @@
 Create a custom scrollbar :
 
 ```html
-<section scrollbar style="
+<section scrollbar="true" style="
     --scrollbar-background-color: #dcdcdc;
     --scrollbar-color: #1e1e1ed5;
     --scrollbar-track-rounded: 0;
